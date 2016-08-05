@@ -3,11 +3,11 @@ services:
   db:
     image: postgres
     env_file: dbserver/.env
-  # migrations:
-  #   env_file: migrations/.env
-  #   build: migrations
-  #   links:
-  #     - db
+  migrations:
+    env_file: migrations/.env
+    build: migrations
+    links:
+      - db
   account1:
     env_file: accountserver/.env
     build: accountserver
