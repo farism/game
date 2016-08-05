@@ -1,0 +1,15 @@
+[submodule "client"]
+	path = client
+	url = git@github.com:farism/game-client.git
+[submodule "accountserver"]
+	path = accountserver
+	url = git@github.com:farism/game-accountserver.git
+[submodule "dbserver"]
+	path = dbserver
+	url = git@github.com:farism/game-dbserver.git
+[submodule "proxyserver"]
+	path = proxyserver
+	url = git@github.com:farism/game-proxyserver.git
+[submodule "migrations"]
+	path = migrations
+	url = git@github.com:farism/game-migrations.git
