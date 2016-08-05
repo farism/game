@@ -1,0 +1,34 @@
+version: '2'
+services:
+  db:
+    image: postgres
+    env_file: dbserver/.env
+  # migrations:
+  #   env_file: migrations/.env
+  #   build: migrations
+  #   links:
+  #     - db
+  account1:
+    env_file: accountserver/.env
+    build: accountserver
+    links:
+      - db
+  account2:
+    env_file: accountserver/.env
+    build: accountserver
+    links:
+      - db
+  account3:
+    env_file: accountserver/.env
+    build: accountserver
+    links:
+      - db
+  proxy:
+    env_file: ./proxyserver/.env
+    build: ./proxyserver
+    ports:
+      - 80:80
+    links:
+      - account1:account1
+      - account2:account2
+      - account3:account3
